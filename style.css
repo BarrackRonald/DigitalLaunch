@@ -1,0 +1,513 @@
+/* ===================
+   Base Styles
+=================== */
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: #f7f8fa;
+  color: #333;
+  line-height: 1.6;
+  scroll-behavior: smooth;
+}
+
+h1, h2, h3 {
+  font-family: 'Poppins', sans-serif;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+section {
+  padding: 4rem 2rem;
+}
+
+/* ===================
+   Header
+=================== */
+.header-flex {
+	background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* Logo Branding */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+}
+
+.logo-img {
+  height: 40px;
+}
+
+.brand-name {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #f8fafc;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Mobile Nav Toggle */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 24px;
+  height: 18px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.nav-toggle span {
+  height: 3px;
+  background: #f8fafc;
+  border-radius: 2px;
+  width: 100%;
+  display: block;
+}
+
+/* Navigation Styling */
+.main-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+.main-nav a {
+  text-decoration: none;
+  color: #f8fafc;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.main-nav a:hover {
+  color: #facc15;
+}
+
+/* Responsive Navigation */
+@media (max-width: 768px) {
+  .nav-toggle {
+    display: flex;
+  }
+
+  .main-nav {
+    display: none;
+    width: 100%;
+    margin-top: 1rem;
+  }
+
+  .main-nav ul {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  body.nav-open .main-nav {
+    display: block;
+  }
+}
+
+
+/* ===================
+   Hero Section
+=================== */
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 2rem;
+}
+
+.hero-text h2 {
+  font-size: 2.8rem;
+  margin-bottom: 1rem;
+}
+
+.hero-text p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  color: #e2e8f0;
+}
+
+.hero-image img {
+  max-width: 100%;
+  height: auto;
+  animation: floatIn 1.2s ease-in-out;
+}
+
+@keyframes floatIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .hero-image {
+    order: -1;
+  }
+
+  .hero-text h2 {
+    font-size: 2rem;
+	color: white;
+  }
+
+  .hero-text p {
+    font-size: 1rem;
+  }
+}
+
+
+/* ===================
+   Buttons
+=================== */
+.btn-primary,
+.btn-secondary {
+  display: inline-block;
+  background: linear-gradient(135deg, #facc15, #fbbf24);
+  color: #1e293b;
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.3s ease, transform 0.2s;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+}
+.btn-primary:hover,
+.btn-secondary:hover {
+  background: linear-gradient(135deg, #fbbf24, #facc15);
+  transform: translateY(-2px);
+}
+
+.btn-primary.whatsapp {
+  background: #25d366;
+  color: #fff;
+}
+.btn-primary.whatsapp:hover {
+  background: #1ebe5d;
+}
+
+/* ===================
+   Cards & Grids
+=================== */
+.grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.card,
+.price-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, background-color 0.3s;
+  position: relative;
+  animation: fadeUp 0.6s ease-in-out both;
+}
+
+.card:hover,
+.price-card:hover {
+  transform: translateY(-4px);
+  background-color: #f1f5f9;
+}
+
+.card h3,
+.price-card h3 {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  color: #0f172a;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.card p {
+  font-size: 1rem;
+  color: #475569;
+}
+
+.price-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0;
+}
+
+.price-card li {
+  margin-bottom: 0.75rem;
+  color: #475569;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.price {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #0ea5e9;
+  margin-top: 1rem;
+  text-align: center;
+}
+
+/* Badge */
+.badge {
+  background-color: #facc15;
+  color: #1e293b;
+  font-weight: 700;
+  padding: 0.3rem 0.75rem;
+  border-radius: 1rem;
+  font-size: 0.75rem;
+  position: absolute;
+  top: -12px;
+  right: -12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.popular {
+  border: 2px solid #facc15;
+}
+
+/* ===================
+   Contact Form
+=================== */
+#contact-form form {
+  max-width: 600px;
+  margin: 2rem auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+#contact-form input,
+#contact-form textarea {
+  padding: 0.75rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  font-size: 1rem;
+  width: 100%;
+}
+
+#contact-form button {
+  width: 100%;
+  font-weight: bold;
+  background: #0ea5e9;
+  color: #fff;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+#contact-form button:hover {
+  background: #0284c7;
+}
+
+/* ===================
+   Footer
+=================== */
+.site-footer {
+  background: #1e293b;
+  color: #cbd5e1;
+  text-align: center;
+  padding: 1.5rem 0;
+  font-size: 0.9rem;
+}
+
+/* ===================
+   Animations
+=================== */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+.fade-in:nth-of-type(2) { animation-delay: 0.3s; }
+.fade-in:nth-of-type(3) { animation-delay: 0.6s; }
+.fade-in:nth-of-type(4) { animation-delay: 0.9s; }
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===================
+   Dark Mode (Optional)
+=================== */
+body.dark-mode {
+  background-color: #1e293b;
+  color: #f8fafc;
+}
+body.dark-mode .card,
+body.dark-mode .price-card {
+  background-color: #334155;
+  color: #f8fafc;
+}
+
+/* ===================
+   Responsive Design
+=================== */
+@media (max-width: 768px) {
+  .main-nav ul {
+    flex-direction: column;
+    align-items: center;
+    background-color: #0f172a;
+    padding: 1rem;
+    display: none;
+  }
+
+  body.nav-open .main-nav ul {
+    display: flex;
+  }
+
+  .nav-toggle {
+    display: flex;
+  }
+
+  .hero h2 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .card,
+  .price-card {
+    padding: 1.5rem;
+  }
+
+  .card h3,
+  .price-card h3 {
+    font-size: 1.2rem;
+  }
+
+  .card p,
+  .price-card li {
+    font-size: 0.95rem;
+  }
+
+  section {
+    padding: 2rem 1rem;
+  }
+}
+/* === Dark Mode Toggle === */
+.theme-toggle {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  background: #facc15;
+  color: #1e293b;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 2rem;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 1000;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+body.dark-mode {
+  background-color: #0f172a;
+  color: #e2e8f0;
+}
+
+body.dark-mode .site-header,
+body.dark-mode .site-footer {
+  background-color: #1e293b;
+  color: #f8fafc;
+}
+
+body.dark-mode .card,
+body.dark-mode .price-card,
+body.dark-mode .contact,
+body.dark-mode .container {
+  background-color: #1e293b;
+  color: #f1f5f9;
+}
+
+body.dark-mode .card,
+body.dark-mode .price-card {
+  box-shadow: 0 2px 12px rgba(255, 255, 255, 0.05);
+}
+
+body.dark-mode .btn-primary,
+body.dark-mode .btn-secondary {
+  background: #facc15;
+  color: #1e293b;
+}
+
+body.dark-mode .btn-primary:hover,
+body.dark-mode .btn-secondary:hover {
+  background: #fbbf24;
+}
+
+body.dark-mode input,
+body.dark-mode textarea {
+  background-color: #0f172a;
+  color: #e2e8f0;
+  border: 1px solid #475569;
+}
+
+/* === Section Backgrounds === */
+#services {
+  background-color: #ffffff;
+}
+
+#bundles {
+  background-color: #f1f5f9;
+}
+
+#pricing {
+  background-color: #ffffff;
+}
+
+#cta {
+  background-color: #0ea5e9;
+  color: white;
+}
+
+#contact-form {
+  background-color: #f1f5f9;
+}
+
+body.dark-mode #cta {
+  background-color: #0284c7;
+}
+
