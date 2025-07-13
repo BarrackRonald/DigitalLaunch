@@ -137,7 +137,7 @@ section {
 .hero-text p {
   font-size: 1.2rem;
   margin-bottom: 2rem;
-  color: #e2e8f0;
+  
 }
 
 .hero-image img {
@@ -237,7 +237,6 @@ section {
 .price-card h3 {
   font-size: 1.25rem;
   margin-bottom: 1rem;
-  color: #0f172a;
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -245,7 +244,7 @@ section {
 
 .card p {
   font-size: 1rem;
-  color: #475569;
+ 
 }
 
 .price-card ul {
@@ -368,7 +367,7 @@ section {
 }
 
 /* ===================
-   Dark Mode (Optional)
+   Dark Mode
 =================== */
 body.dark-mode {
   background-color: #1e293b;
